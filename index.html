@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Minecraft Mob–Biome Explorer</title>
+    <link rel="stylesheet" href="nchaud28.css" />
+</head>
+
+<body>
+    <div id="header">
+      <div class="header-spacer"></div>
+      <h1>Minecraft Mob–Biome Explorer</h1>
+      <button id="toggleInfo" class="info-btn">💡 Info & Credits</button>
+    </div>
+
+    <div id="filters">
+      <div class="filter-group">
+        <label>Search:</label>
+        <input id="searchBox" type="text" placeholder="Search mobs..."/>
+      </div>
+
+      <div class="filter-group">
+        <label>Behavior:</label>
+        <select id="behaviorFilter">
+            <option value="all">All</option>
+        </select>
+      </div>
+      
+      <div class="filter-group">
+        <label>Spawn Type:</label>
+        <select id="spawnFilter">
+            <option value="all">All</option>
+        </select>
+      </div>
+      
+      <div class="filter-group">
+        <label>Health:</label>
+        <select id="healthFilter">
+            <option value="all">All</option>
+        </select>
+      </div>
+      
+      <div class="filter-group">
+        <label>Max Damage:</label>
+        <select id="damageFilter">
+            <option value="all">All</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Dimensions:</label>
+        <div id="dimensionFilter" class="dimension-toggles">
+            <!-- Will be populated dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <div id="container">
+      <div id="mobSection">
+          <!-- Mobs will be dynamically added here as image tiles -->
+      </div>
+      
+      <div id="biomeSection">
+          <!-- Biomes will be dynamically added here as image tiles -->
+      </div>
+    </div>
+
+    <div id="tooltip" class="tooltip"></div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="nchaud28.js"></script>
+
+    <div id="infoPanel" class="info-panel hidden">
+    <button id="closeInfo" class="close-btn">✕</button>
+    
+    <div class="info-section">
+        <h3>How to Use</h3>
+        <ul>
+            <li><strong>Click a mob</strong> to see which biomes it spawns in (biomes will glow)</li>
+            <li><strong>Click a biome</strong> to see which mobs spawn there (background changes, mobs glow)</li>
+            <li><strong>Hover</strong> over any tile to see detailed stats</li>
+            <li><strong>Use filters</strong> to narrow down mobs by behavior, spawn type, health, or damage</li>
+            <li><strong>Toggle dimensions</strong> to show/hide Overworld, Nether, or End biomes</li>
+            <li><strong>Click outside</strong> any tile to reset the view</li>
+        </ul>
+    </div>
+    
+    <div class="info-section">
+        <h3>Legend</h3>
+        <div class="legend-item">
+            <div class="legend-color" style="background: rgba(76, 175, 80, 0.9);"></div>
+            <span>Peaceful Mobs</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: rgba(244, 67, 54, 0.9);"></div>
+            <span>Hostile Mobs</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: rgba(255, 193, 7, 0.9);"></div>
+            <span>Conditional/Neutral Mobs</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="border: 3px solid #4CAF50;"></div>
+            <span>Overworld Biomes</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="border: 3px solid #FF5722;"></div>
+            <span>Nether Biomes</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="border: 3px solid #9C27B0;"></div>
+            <span>End Biomes</span>
+        </div>
+    </div>
+
+    <div class="info-section category-section">
+        <h3>Custom Visualization Category: COMBINATORIAL</h3>
+        
+        <p><strong>This visualization is classified as COMBINATORIAL</strong> because it combines multiple existing visualization techniques and interaction paradigms into a unique, integrated exploration interface:</p>
+        
+        <h4>Combined Techniques:</h4>
+        <ol>
+            <li><strong>Grid/Tile Layout:</strong> A standard categorical visualization technique for displaying discrete entities in a spatial arrangement</li>
+            <li><strong>Network/Relational Visualization:</strong> Implicitly shows connections between mobs and biomes through the fauna-geography relationships (FaunaGeography.csv)</li>
+            <li><strong>Coordinated Multiple Views:</strong> Two linked sections where interactions in one affect the display in the other</li>
+            <li><strong>Multi-dimensional Filtering:</strong> Standard filtering technique allowing users to explore data by multiple attributes simultaneously</li>
+            <li><strong>Semantic Focus+Context:</strong> Dimming and highlighting creates focus while maintaining context of all entities</li>
+            <li><strong>Environmental Theming:</strong> Using background texture transformation to provide contextual immersion</li>
+        </ol>
+        
+        <h4>What Makes It Custom:</h4>
+        <p>The innovation lies in the <strong>bidirectional relationship exploration combined with environmental immersion</strong>. The system allows two distinct exploration modes:</p>
+        <ol>
+            <li><strong>Mob-centric exploration:</strong> "Where does this creature live?" - Select a mob to see its habitat distribution</li>
+            <li><strong>Biome-centric exploration:</strong> "What lives here?" - Select a biome to see its fauna, with the mob section transforming to match the biome's environment</li>
+        </ol>
+        
+        <p>The <strong>background transformation feature</strong> is particularly novel. When a biome is selected, the mob section's background changes to that biome's texture, creating an immersive "You Are Here!" experience. This goes beyond typical linked visualizations by adding an environmental storytelling layer.</p>
+        
+        <p>Additionally, the <strong>multi-attribute encoding</strong> (color for behavior, borders for dimension, glow for relationships) creates a dense information display suitable for a museum exhibit where visitors can explore at their own pace.</p>
+        
+    </div>
+
+    
+    <div class="info-section">
+        <h3>Credits</h3>
+        <ul>
+          <li><strong>Images & GIFs:</strong> All mob and biome images/GIFs are sourced from <a href="https://minecraft.wiki/" target="_blank">Minecraft Wiki</a></li>
+          <li><strong>Dataset:</strong> Minecraft Blocks, Items, Mobs, Biomes from <a href="https://www.kaggle.com/" target="_blank">Kaggle</a></li>
+          <li><strong>Technologies:</strong> D3.js v7, HTML5, CSS3, JavaScript ES6</li>
+          <li><strong>Created For:</strong> CSE 578 Data Visualization - Museum Exhibit Assignment</li>
+          <li><strong>Created By:</strong> Nishtha Kuberbhai Chaudhary (<strong>ASURITE:</strong> nchaud28)</li>
+        </ul>
+    </div>
+</div>
+
+<div id="infoOverlay" class="info-overlay"></div>
+
+</body>
+</html>
