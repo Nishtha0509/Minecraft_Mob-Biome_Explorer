@@ -466,3 +466,126 @@ body {
     border: 2px solid #444;
     flex-shrink: 0;
 }
+
+.choices {
+    font-family: 'Press Start 2P', monospace ;
+    margin-bottom: 0 ;
+    font-size: 9px ;
+}
+
+.choices__inner {
+    background-color: #3a3a3a ;
+    border: 2px solid #555 ;
+    border-radius: 0 ;
+    padding: 6px 40px 6px 10px ;
+    font-size: 9px ;
+    min-height: auto ;
+    min-width: 140px ;
+    width: auto;
+}
+
+.choices__inner:hover {
+    border-color: #777 ;
+}
+
+.choices.is-focused .choices__inner,
+.choices.is-open .choices__inner {
+    border-color: #FFD700 ;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.3) ;
+}
+
+.choices__list--single {
+    padding: 0 ;
+}
+
+.choices__item {
+    font-family: 'Press Start 2P', monospace ;
+    font-size: 9px ;
+    color: #fff ;
+    background: transparent ;
+}
+
+/* Dropdown menu */
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+    background-color: #2a2a2a ;
+    border: 2px solid #555 ;
+    border-top: none ;
+    border-radius: 0 ;
+    font-size: 9px ;
+    margin-top: -2px ;
+    z-index: 1000 ;
+}
+
+.choices__list--dropdown .choices__item,
+.choices__list[aria-expanded] .choices__item {
+    color: #ccc ;
+    padding: 8px 10px ;
+    font-size: 9px ;
+    background: transparent ;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted,
+.choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+    background-color: #4a4a4a ;
+    color: #FFD700 ;
+}
+
+.choices__list--dropdown .choices__item--selectable,
+.choices__list[aria-expanded] .choices__item--selectable {
+    padding-right: 10px ;
+}
+
+.choices__placeholder {
+    opacity: 0.5 ;
+}
+
+.choices__input {
+    display: none ;
+    background-color: transparent ;
+    font-size: 9px ;
+}
+
+.choices__input--cloned {
+    display: none ;
+}
+
+/* Custom dropdown arrow */
+.choices[data-type*=select-one]::after {
+    content: '▼';
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    color: #fff;
+    border: none;
+    width: auto;
+    height: auto;
+    margin-top: 0;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 12px;
+}
+
+.choices[data-type*=select-one].is-open::after {
+    transform: translateY(-50%) rotate(180deg) ;
+    margin-top: 0 ;
+}
+
+.choices__button {
+    display: none ;
+}
+
+.choices__list--dropdown::-webkit-scrollbar {
+    width: 8px;
+}
+
+.choices__list--dropdown::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+.choices__list--dropdown::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+.choices__list--dropdown::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}

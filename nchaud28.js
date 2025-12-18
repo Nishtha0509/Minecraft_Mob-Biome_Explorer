@@ -294,6 +294,28 @@ function createDimensionToggles() {
     });
 }
 
+function initializeCustomDropdowns() {
+    // Initialize Choices.js on all select elements
+    const selects = [
+        new Choices('#behaviorFilter', {
+            searchEnabled: false,
+            itemSelectText: '',
+        }),
+        new Choices('#spawnFilter', {
+            searchEnabled: false,
+            itemSelectText: '',
+        }),
+        new Choices('#healthFilter', {
+            searchEnabled: false,
+            itemSelectText: '',
+        }),
+        new Choices('#damageFilter', {
+            searchEnabled: false,
+            itemSelectText: '',
+        })
+    ];
+}
+
 
 // ---------- filter data ----------
 
@@ -498,6 +520,7 @@ Promise.all([
     
     // starting the setup
     populateFilters();
+    initializeCustomDropdowns();
     renderMobs();
     renderBiomes();
     setupEventListeners();

@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minecraft Mob–Biome Explorer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
     <link rel="stylesheet" href="nchaud28.css" />
 </head>
 
@@ -113,35 +116,6 @@
             <span>End Biomes</span>
         </div>
     </div>
-
-    <div class="info-section category-section">
-        <h3>Custom Visualization Category: COMBINATORIAL</h3>
-        
-        <p><strong>This visualization is classified as COMBINATORIAL</strong> because it combines multiple existing visualization techniques and interaction paradigms into a unique, integrated exploration interface:</p>
-        
-        <h4>Combined Techniques:</h4>
-        <ol>
-            <li><strong>Grid/Tile Layout:</strong> A standard categorical visualization technique for displaying discrete entities in a spatial arrangement</li>
-            <li><strong>Network/Relational Visualization:</strong> Implicitly shows connections between mobs and biomes through the fauna-geography relationships (FaunaGeography.csv)</li>
-            <li><strong>Coordinated Multiple Views:</strong> Two linked sections where interactions in one affect the display in the other</li>
-            <li><strong>Multi-dimensional Filtering:</strong> Standard filtering technique allowing users to explore data by multiple attributes simultaneously</li>
-            <li><strong>Semantic Focus+Context:</strong> Dimming and highlighting creates focus while maintaining context of all entities</li>
-            <li><strong>Environmental Theming:</strong> Using background texture transformation to provide contextual immersion</li>
-        </ol>
-        
-        <h4>What Makes It Custom:</h4>
-        <p>The innovation lies in the <strong>bidirectional relationship exploration combined with environmental immersion</strong>. The system allows two distinct exploration modes:</p>
-        <ol>
-            <li><strong>Mob-centric exploration:</strong> "Where does this creature live?" - Select a mob to see its habitat distribution</li>
-            <li><strong>Biome-centric exploration:</strong> "What lives here?" - Select a biome to see its fauna, with the mob section transforming to match the biome's environment</li>
-        </ol>
-        
-        <p>The <strong>background transformation feature</strong> is particularly novel. When a biome is selected, the mob section's background changes to that biome's texture, creating an immersive "You Are Here!" experience. This goes beyond typical linked visualizations by adding an environmental storytelling layer.</p>
-        
-        <p>Additionally, the <strong>multi-attribute encoding</strong> (color for behavior, borders for dimension, glow for relationships) creates a dense information display suitable for a museum exhibit where visitors can explore at their own pace.</p>
-        
-    </div>
-
     
     <div class="info-section">
         <h3>Credits</h3>
@@ -149,8 +123,13 @@
           <li><strong>Images & GIFs:</strong> All mob and biome images/GIFs are sourced from <a href="https://minecraft.wiki/" target="_blank">Minecraft Wiki</a></li>
           <li><strong>Dataset:</strong> Minecraft Blocks, Items, Mobs, Biomes from <a href="https://www.kaggle.com/" target="_blank">Kaggle</a></li>
           <li><strong>Technologies:</strong> D3.js v7, HTML5, CSS3, JavaScript ES6</li>
-          <li><strong>Created For:</strong> CSE 578 Data Visualization - Museum Exhibit Assignment</li>
-          <li><strong>Created By:</strong> Nishtha Kuberbhai Chaudhary (<strong>ASURITE:</strong> nchaud28)</li>
+        </ul>
+    </div>
+
+    <div class="info-section">
+        <h3>Creator</h3>
+        <ul>
+          <li>Nishtha Kuberbhai Chaudhary (<strong>Email: nishthakc@gmail.com</strong>)</li>
         </ul>
     </div>
 </div>
